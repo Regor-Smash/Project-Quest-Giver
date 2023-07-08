@@ -24,9 +24,9 @@ public struct Quest
         this.urgent = so.urgent;
     }
 
-    public ChanceTiers SuccessTier (Adventurer party)
+    public ChanceTiers SuccessTier (Party party)
     {
-        int diff =  (int)party.level - (int)level;
+        int diff =  (int)party.PartyLevel() - (int)level;
 
         switch (diff)
         {

@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15f1cf33d3b496c4793f54d49d9cc989, type: 3}
-  m_Name: Test Quest
+  m_Script: {fileID: 11500000, guid: a38916c40464c504e80c7af4760113e2, type: 3}
+  m_Name: Meg
   m_EditorClassIdentifier: 
-  questName: Test Quest
-  level: 2
-  keywords:
-  - 
-  - 
-  demonicInfluence: 5
-  travelTime: 1
-  urgent: 0
+  adventurerName: Meg
+  adventureClass: Barbarian
+  level: 4
+  keywords: []
