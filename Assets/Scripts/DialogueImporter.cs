@@ -14,4 +14,10 @@ public static class DialogueImporter
         TextAsset file = Resources.Load<TextAsset>(DialogueFolder + dialogName);
         return file.text.Split('\n');
     }
+
+    public static string[] ImportExitLines()
+    {
+        TextAsset file = Resources.Load<TextAsset>(DialogueFolder + "CharacterExitLines");
+        return file.text.Split('\n');
+    }
 }
