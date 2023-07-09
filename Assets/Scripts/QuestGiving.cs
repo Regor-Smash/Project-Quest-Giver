@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class QuestGiving : MonoBehaviour
 {
@@ -11,7 +12,8 @@ public class QuestGiving : MonoBehaviour
 
     private Quest[] allQuests;
     private List<GameObject> questContracts = new List<GameObject> ();
-    private List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
+    private static List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
+    private const int dailyQuestCount = 5;
 
     public static QuestGiving Instance;
 
@@ -66,6 +68,16 @@ public class QuestGiving : MonoBehaviour
         Debug.Log("You picked: " + q.questName);
         SelectedQuest.Invoke();
         ClearQuestContracts();
+
+        if(currentQuests.Count >= dailyQuestCount)
+        {
+            EndDay();
+        }
+    }
+
+    private void EndDay()
+    {
+        SceneManager.LoadScene("Scenes/End of Shift");
     }
 
     private void OnDestroy()

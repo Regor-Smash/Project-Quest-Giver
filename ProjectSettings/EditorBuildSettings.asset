@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Adventurer's Guild.unity
     guid: 08504444226b09047819afb004a63629
   - enabled: 1
+    path: Assets/Scenes/End of Shift.unity
+    guid: fd84b491f1857014d9d922f68af8fbef
+  - enabled: 1
     path: Assets/Scenes/Endings/Demonic Ending.unity
     guid: f27745637e0644e48a87a783585181ea
   - enabled: 1
