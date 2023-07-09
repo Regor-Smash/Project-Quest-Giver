@@ -9,7 +9,6 @@ public class QuestGiving : MonoBehaviour
     private GameObject contractPrefab;
     public UnityEvent SelectedQuest;
 
-    private Party currParty;
     private Quest[] allQuests;
     private List<GameObject> questContracts = new List<GameObject> ();
     private List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
@@ -30,8 +29,7 @@ public class QuestGiving : MonoBehaviour
 
     void Start()
     {
-        currParty = GetRandomParty();
-        Debug.Log(currParty.ToString());
+        
         QuestSO[] allQSO = Resources.LoadAll<QuestSO>("Quests");
         allQuests = new Quest[allQSO.Length];
         for(int i = 0; i < allQSO.Length; i++)
@@ -39,17 +37,6 @@ public class QuestGiving : MonoBehaviour
             allQuests[i] = new Quest(allQSO[i]);
         }
         //DisplayQuestContracts();
-    }
-
-    private Party GetRandomParty()
-    {
-        return PartyGenerator.GenerateNewParty((uint)Random.Range(1, 11));
-    }
-
-    private Party LoadRandomParty()
-    {
-        AdventurerSO[] adventurers = Resources.LoadAll<AdventurerSO>("Named Adventurers");
-        return new Party(new Adventurer(adventurers[0]), new Adventurer(adventurers[1]), new Adventurer(adventurers[2]));
     }
 
     private void ClearQuestContracts()
@@ -68,14 +55,14 @@ public class QuestGiving : MonoBehaviour
         for (int i = 0; i < allQuests.Length; i++)
         {
             GameObject newContract = GameObject.Instantiate(contractPrefab, transform);
-            newContract.GetComponent<QuestDisplay>().DisplayQuest(allQuests[i], currParty);
+            newContract.GetComponent<QuestDisplay>().DisplayQuest(allQuests[i], PartyManager.Instance.currParty);
             questContracts.Add(newContract);
         }
     }
 
-    public void PickQuest(Quest q)
+    public void PickQuest(Quest q, Party p)
     {
-        currentQuests.Add(new AcceptedQuest(q, currParty));
+        currentQuests.Add(new AcceptedQuest(q, p));
         Debug.Log("You picked: " + q.questName);
         SelectedQuest.Invoke();
         ClearQuestContracts();

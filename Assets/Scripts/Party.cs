@@ -46,19 +46,31 @@ public class Party
             totLevel += adventurer1.level;
             totNum++;
         }
+        else
+        {
+            totLevel -= 1;
+        }
         if (adventurer2 != null)
         {
             totLevel += adventurer2.level;
             totNum++;
+        }
+        else
+        {
+            totLevel -= 1;
         }
         if (adventurer3 != null)
         {
             totLevel += adventurer3.level;
             totNum++;
         }
+        else
+        {
+            totLevel -= 1;
+        }
 
         float avg = totLevel / totNum;
-        return (uint)Mathf.Abs(Mathf.RoundToInt(avg));
+        return (uint)Mathf.Clamp(Mathf.RoundToInt(avg), 0, 30);
     }
 
     public override string ToString()

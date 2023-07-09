@@ -8,6 +8,7 @@ public class PartyManager : MonoBehaviour
     private Walker partyGO;
 
     private const int averageWait = 10; //in seconds
+    public Party currParty;
 
     public static PartyManager Instance;
 
@@ -29,6 +30,17 @@ public class PartyManager : MonoBehaviour
         QuestGiving.Instance.SelectedQuest.AddListener(SendAway);
     }
 
+    private Party GetRandomParty()
+    {
+        return PartyGenerator.GenerateNewParty((uint)Random.Range(1, 11));
+    }
+
+    private Party LoadRandomParty()
+    {
+        AdventurerSO[] adventurers = Resources.LoadAll<AdventurerSO>("Named Adventurers");
+        return new Party(new Adventurer(adventurers[0]), new Adventurer(adventurers[1]), new Adventurer(adventurers[2]));
+    }
+
     public void SendAway()
     {
         partyGO.WalkToNext(true);
@@ -38,8 +50,12 @@ public class PartyManager : MonoBehaviour
     }
     public void SendIn()
     {
+        currParty = GetRandomParty();
+        Debug.Log(currParty.ToString());
+
         partyGO.gameObject.SetActive(true);
         partyGO.WalkToNext(false);
+
         DialogueManager.Instance.StartDialogue("Enter Line");
         QuestGiving.Instance.DisplayQuestContracts();
     }
