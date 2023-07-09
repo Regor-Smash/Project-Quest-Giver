@@ -52,6 +52,7 @@ public class EndOfShift : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
 
+        PlayerStats.SaveToPrefs();
         PlayerStats.CheckEndings();
     }
 }

@@ -1364,6 +1364,7 @@ GameObject:
   - component: {fileID: 1933059452}
   - component: {fileID: 1933059451}
   - component: {fileID: 1933059453}
+  - component: {fileID: 1933059454}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -1417,6 +1418,18 @@ MonoBehaviour:
   warriorSprite: {fileID: 21300000, guid: d81f840937095b84292094b02d96138c, type: 3}
   priestSprite: {fileID: 21300000, guid: 9de11a2c22c2ebf48b1197b864239eea, type: 3}
   wizardSprite: {fileID: 21300000, guid: a92fe867af0520946b0c2a7f87a1271e, type: 3}
+--- !u!114 &1933059454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933059450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c14e1325a7a5f4882d36bd9d74128c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &625735856480366668
 PrefabInstance:
   m_ObjectHideFlags: 0

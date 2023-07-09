@@ -59,4 +59,20 @@ public static class PlayerStats
     {
         return guildSuspicion / deathThreshold;
     }
+
+    public static void SaveToPrefs()
+    {
+        PlayerPrefs.SetInt("Days Survived", daysSurvived);
+        PlayerPrefs.SetFloat("Demonic Grasp", demonicGrasp);
+        PlayerPrefs.SetFloat("Guild Suspicion", guildSuspicion);
+
+        PlayerPrefs.Save();
+    }
+
+    public static void LoadFromPrefs()
+    {
+        daysSurvived = PlayerPrefs.GetInt("Days Survived", 0);
+        demonicGrasp = PlayerPrefs.GetFloat("Demonic Grasp", 0);
+        guildSuspicion = PlayerPrefs.GetFloat("Guild Suspicion", 0);
+    }
 }
