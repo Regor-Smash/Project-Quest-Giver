@@ -11,6 +11,20 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueBox;
 
+    public static DialogueManager Instance;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("Instance already set.", Instance);
+        }
+    }
+
     void Start()
     {
         //StartDialogue("Test Dialogue");
@@ -94,5 +108,10 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueText.text = "";
         dialogueBox.SetActive(false);
+    }
+
+    private void OnDestroy()
+    {
+        Instance = null;
     }
 }

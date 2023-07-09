@@ -20,6 +20,6 @@ public class QuestDisplay : MonoBehaviour
 
     public void ChooseQuest()
     {
-        QuestGiving.instance.PickQuest(currQ);
+        QuestGiving.Instance.PickQuest(currQ);
     }
 }

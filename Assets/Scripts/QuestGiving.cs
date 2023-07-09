@@ -5,23 +5,26 @@ using UnityEngine.Events;
 
 public class QuestGiving : MonoBehaviour
 {
-    public GameObject contractPrefab;
+    [SerializeField]
+    private GameObject contractPrefab;
     public UnityEvent SelectedQuest;
+
     private Party currParty;
     private Quest[] allQuests;
+    private List<GameObject> questContracts = new List<GameObject> ();
     private List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
 
-    public static QuestGiving instance;
+    public static QuestGiving Instance;
 
     private void Awake()
     {
-        if (instance == null)
+        if (Instance == null)
         {
-            instance = this;
+            Instance = this;
         }
         else
         {
-            Debug.Log("Instance already set.", instance);
+            Debug.Log("Instance already set.", Instance);
         }
     }
 
@@ -35,7 +38,7 @@ public class QuestGiving : MonoBehaviour
         {
             allQuests[i] = new Quest(allQSO[i]);
         }
-        DisplayQuestContracts();
+        //DisplayQuestContracts();
     }
 
     private Party GetRandomParty()
@@ -49,12 +52,24 @@ public class QuestGiving : MonoBehaviour
         return new Party(new Adventurer(adventurers[0]), new Adventurer(adventurers[1]), new Adventurer(adventurers[2]));
     }
 
+    private void ClearQuestContracts()
+    {
+        while(questContracts.Count > 0)
+        {
+            Destroy(questContracts[0]);
+            questContracts.RemoveAt(0);
+        }
+        
+    }
+
     public void DisplayQuestContracts()
     {
+        ClearQuestContracts();
         for (int i = 0; i < allQuests.Length; i++)
         {
             GameObject newContract = GameObject.Instantiate(contractPrefab, transform);
             newContract.GetComponent<QuestDisplay>().DisplayQuest(allQuests[i], currParty);
+            questContracts.Add(newContract);
         }
     }
 
@@ -63,11 +78,12 @@ public class QuestGiving : MonoBehaviour
         currentQuests.Add(new AcceptedQuest(q, currParty));
         Debug.Log("You picked: " + q.questName);
         SelectedQuest.Invoke();
+        ClearQuestContracts();
     }
 
     private void OnDestroy()
     {
-        instance = null;
+        Instance = null;
     }
 }
 

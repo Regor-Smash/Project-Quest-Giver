@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class Walker : MonoBehaviour
 {
-    public Vector3[] locations = new Vector3[0];
-    public float speed = 0.1f;
-    public bool walkOnStart = true;
+    [SerializeField]
+    private Vector3[] locations = new Vector3[0];
+    [SerializeField]
+    private float speed = 0.1f;
+    [SerializeField]
+    private bool walkOnStart = true;
+
+    private bool dissapearOnArrive = false;
 
     private Vector3 destination;
     private const float proximity = 0.1f;
+    private int destinationIndex = -1;
 
     private void Awake()
     {
@@ -30,11 +36,30 @@ public class Walker : MonoBehaviour
         {
             transform.Translate((destination - transform.position).normalized*speed);
         }
+        else //arrived
+        {
+            if (dissapearOnArrive)
+            {
+                gameObject.SetActive(false);
+            }
+        }
     }
 
-    public void WalkTo(int locIndex)
+    public void WalkTo(int locIndex, bool dissapear = false)
     {
         destination = locations[locIndex];
+        destinationIndex = locIndex;
+        dissapearOnArrive = dissapear;
+    }
+
+    public void WalkToNext(bool dissapear = false)
+    {
+        destinationIndex++;
+        if(destinationIndex >= locations.Length)
+        {
+            destinationIndex = 0;
+        }
+        WalkTo(destinationIndex, dissapear);
     }
 
     private float DistanceToDestination()
