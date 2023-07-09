@@ -58,6 +58,7 @@ public class QuestGiving : MonoBehaviour
     public void PickQuest(Quest q)
     {
         Debug.Log("You picked: " + q.questName);
+        PlayerStats.Upkeep(1000, 000);
     }
 
     private void OnDestroy()

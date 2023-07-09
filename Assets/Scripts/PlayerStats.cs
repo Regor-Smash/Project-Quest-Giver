@@ -1,19 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class PlayerStats : MonoBehaviour
+public static class PlayerStats
 {
-    private float demonicGrasp = 0;
-    private float guildOversight = 0;
+    private static float demonicGrasp = 0;
+    private static float guildSuspicion = 0;
 
-    private float Stress { get { return demonicGrasp + guildOversight; } }
+    private const float deathThreshold = 100;
 
-    public void Upkeep()
+    public static float Stress { get { return demonicGrasp + guildSuspicion; } }
+
+    public static void Upkeep(float deltaDemon, float deltaSus)
     {
-        if(Stress > 100)
+        demonicGrasp += deltaDemon;
+        guildSuspicion += deltaSus;
+
+        if(demonicGrasp > deathThreshold)
         {
-            //You die
+            SceneManager.LoadScene("Scenes/Endings/Demonic Ending");
+        }
+        if(guildSuspicion > deathThreshold)
+        {
+            SceneManager.LoadScene("Scenes/Endings/Suspicion Ending");
         }
     }
 }
