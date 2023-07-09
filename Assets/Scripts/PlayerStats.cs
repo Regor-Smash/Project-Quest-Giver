@@ -25,4 +25,14 @@ public static class PlayerStats
             SceneManager.LoadScene("Scenes/Endings/Suspicion Ending");
         }
     }
+
+    public static float DemonPercent()
+    {
+        return demonicGrasp / deathThreshold;
+    }
+
+    public static float SuspicionPercent()
+    {
+        return guildSuspicion / deathThreshold;
+    }
 }
