@@ -36,6 +36,10 @@ public class AcceptedQuest
         PlayerStats.AnotherQuestCompleted(success);
         if (success)
         {
+            if(quest.questName == "Demon Lord's Keep")
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Scenes/Endings/Heroic Ending");
+            }
             PlayerStats.Upkeep(quest.demonicInfluence, susByTier(tier));
         }
         else

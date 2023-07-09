@@ -25,10 +25,12 @@ public static class PlayerStats
     {
         if (demonicGrasp >= deathThreshold)
         {
+            ClearPrefs();
             SceneManager.LoadScene("Scenes/Endings/Demonic Ending");
         }
         if (guildSuspicion >= deathThreshold)
         {
+            ClearPrefs();
             SceneManager.LoadScene("Scenes/Endings/Suspicion Ending");
         }
     }
@@ -58,6 +60,15 @@ public static class PlayerStats
     public static float SuspicionPercent()
     {
         return guildSuspicion / deathThreshold;
+    }
+
+    private static void ClearPrefs()
+    {
+        PlayerPrefs.SetInt("Days Survived", 0);
+        PlayerPrefs.SetFloat("Demonic Grasp", 0);
+        PlayerPrefs.SetFloat("Guild Suspicion", 0);
+
+        PlayerPrefs.Save();
     }
 
     public static void SaveToPrefs()

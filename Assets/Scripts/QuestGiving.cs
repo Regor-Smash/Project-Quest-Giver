@@ -54,10 +54,13 @@ public class QuestGiving : MonoBehaviour
     public void DisplayQuestContracts()
     {
         ClearQuestContracts();
-        for (int i = 0; i < allQuests.Length; i++)
+
+        int[] questIndexes = new int[] { Random.Range(0, allQuests.Length), Random.Range(0, allQuests.Length), 
+            Random.Range(0, allQuests.Length), Random.Range(0, allQuests.Length) };
+        for (int i = 0; i < questIndexes.Length; i++)
         {
             GameObject newContract = GameObject.Instantiate(contractPrefab, transform);
-            newContract.GetComponent<QuestDisplay>().DisplayQuest(allQuests[i], PartyManager.Instance.currParty);
+            newContract.GetComponent<QuestDisplay>().DisplayQuest(allQuests[questIndexes[i]], PartyManager.Instance.currParty);
             questContracts.Add(newContract);
         }
     }
