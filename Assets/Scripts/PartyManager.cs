@@ -7,7 +7,7 @@ public class PartyManager : MonoBehaviour
     [SerializeField]
     private Walker partyGO;
 
-    private const int averageWait = 10; //in seconds
+    private const int averageWait = 6; //in seconds
     public Party currParty;
 
     public static PartyManager Instance;
@@ -32,7 +32,7 @@ public class PartyManager : MonoBehaviour
 
     private Party GetRandomParty()
     {
-        return PartyGenerator.GenerateNewParty((uint)Random.Range(1, 11));
+        return PartyGenerator.GenerateNewParty((uint)Random.Range(1+PlayerStats.daysSurvived, 11 + PlayerStats.daysSurvived));
     }
 
     private Party LoadRandomParty()
