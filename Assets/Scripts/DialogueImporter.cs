@@ -20,4 +20,10 @@ public static class DialogueImporter
         TextAsset file = Resources.Load<TextAsset>(DialogueFolder + "CharacterExitLines");
         return file.text.Split('\n');
     }
+
+    public static string[] ImportEnterLines()
+    {
+        TextAsset file = Resources.Load<TextAsset>(DialogueFolder + "CharacterEnterLines");
+        return file.text.Split('\n');
+    }
 }

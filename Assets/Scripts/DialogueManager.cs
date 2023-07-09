@@ -5,6 +5,8 @@ using UnityEngine;
 public class DialogueManager : MonoBehaviour
 {
     private Queue<string> dialogueQueue = new Queue<string>();
+    private string[] enterLines = new string[0];
+    private string[] exitLines = new string[0];
 
     public TextMeshProUGUI dialogueText;
     public GameObject dialogueBox;
@@ -16,6 +18,17 @@ public class DialogueManager : MonoBehaviour
 
     private void GetDialogue(string actName)
     {
+        if(actName.ToLower() == "entering line" || actName.ToLower() == "enter line")
+        {
+            dialogueQueue.Enqueue(GetEnteringLine());
+            return;
+        }
+        if(actName.ToLower() == "exiting line" || actName.ToLower() == "exit line")
+        {
+            dialogueQueue.Enqueue(GetExitingLine());
+            return;
+        }
+
         string[] dialog = DialogueImporter.ImportDialogueFromName(actName);
         for(int i = 0; i < dialog.Length; i++)
         {
@@ -39,6 +52,24 @@ public class DialogueManager : MonoBehaviour
         {
             Debug.LogWarning("Can't start '" + actName + "' dialogue becasue dialogue is already in progress.");
         }
+    }
+
+    private string GetEnteringLine()
+    {
+        if (enterLines.Length == 0)
+        {
+            enterLines = DialogueImporter.ImportEnterLines();
+        }
+        return enterLines[Random.Range(0, enterLines.Length)];
+    }
+
+    private string GetExitingLine()
+    {
+        if (exitLines.Length == 0)
+        {
+            exitLines = DialogueImporter.ImportExitLines();
+        }
+        return exitLines[Random.Range(0, exitLines.Length)];
     }
 
     public void DisplayNextDialogue()

@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuestGiving : MonoBehaviour
 {
     public GameObject contractPrefab;
+    public UnityEvent SelectedQuest;
     private Party currParty;
     private Quest[] allQuests;
+    private List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
 
     public static QuestGiving instance;
 
@@ -57,12 +60,26 @@ public class QuestGiving : MonoBehaviour
 
     public void PickQuest(Quest q)
     {
+        currentQuests.Add(new AcceptedQuest(q, currParty));
         Debug.Log("You picked: " + q.questName);
-        PlayerStats.Upkeep(1000, 000);
+        SelectedQuest.Invoke();
     }
 
     private void OnDestroy()
     {
         instance = null;
+    }
+}
+
+
+class AcceptedQuest
+{
+    public Quest quest;
+    public Party party;
+
+    public AcceptedQuest(Quest _quest, Party _party)
+    {
+        quest = _quest;
+        party = _party;
     }
 }
