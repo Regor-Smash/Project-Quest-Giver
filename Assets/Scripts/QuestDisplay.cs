@@ -16,7 +16,7 @@ public class QuestDisplay : MonoBehaviour
         currQ = q;
         currP = p;
         questTitle.text = q.questName;
-        questDescription.text = "This is a quest for Level " + q.level.ToString() + " adventurers. It would be " + q.SuccessTier(p).ToString() + " that your party completes it.";
+        questDescription.text = "This is a quest for Level " + q.level.ToString() + " adventurers. It would be " + q.GetSuccessTier(p).ToString() + " that your party completes it.";
         demonicInfluenceGauge.fillAmount = q.demonicInfluence / 100;
     }
 

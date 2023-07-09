@@ -24,7 +24,7 @@ public struct Quest
         this.urgent = so.urgent;
     }
 
-    public ChanceTiers SuccessTier (Party party)
+    public ChanceTiers GetSuccessTier (Party party)
     {
         int diff =  (int)party.PartyLevel() - (int)level;
 
@@ -38,8 +38,13 @@ public struct Quest
         }
     }
 
-    public float SuccessChance (ChanceTiers tier)
+    private float SuccessChance(ChanceTiers tier)
     {
         return chanceTiers[tier];
+    }
+
+    public float GetSuccessChance (Party party)
+    {
+        return SuccessChance(GetSuccessTier(party));
     }
 }

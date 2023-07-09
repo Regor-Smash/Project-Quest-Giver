@@ -36,12 +36,22 @@ public class EndOfShift : MonoBehaviour
 
     IEnumerator DisplayResults()
     {
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(3f);
         PlayerStats.AnotherDaySurvived();
         UpdateDisplays();
-        /*
         yield return new WaitForSeconds(1f);
-        PlayerStats.questsFailed
-        UpdateDisplays();*/
+
+        while (QuestGiving.currentQuests.Count > 0)
+        {
+            AcceptedQuest q = QuestGiving.currentQuests[0];
+            QuestGiving.currentQuests.RemoveAt(0);
+
+            q.Finish();
+
+            UpdateDisplays();
+            yield return new WaitForSeconds(1f);
+        }
+
+        PlayerStats.CheckEndings();
     }
 }

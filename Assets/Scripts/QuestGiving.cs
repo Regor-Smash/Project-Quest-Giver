@@ -12,7 +12,7 @@ public class QuestGiving : MonoBehaviour
 
     private Quest[] allQuests;
     private List<GameObject> questContracts = new List<GameObject> ();
-    private static List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
+    public static List<AcceptedQuest> currentQuests = new List<AcceptedQuest>();
     private const int dailyQuestCount = 5;
 
     public static QuestGiving Instance;
@@ -83,18 +83,5 @@ public class QuestGiving : MonoBehaviour
     private void OnDestroy()
     {
         Instance = null;
-    }
-}
-
-
-class AcceptedQuest
-{
-    public Quest quest;
-    public Party party;
-
-    public AcceptedQuest(Quest _quest, Party _party)
-    {
-        quest = _quest;
-        party = _party;
     }
 }

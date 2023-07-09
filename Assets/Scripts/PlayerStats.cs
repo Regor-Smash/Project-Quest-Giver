@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class PlayerStats
 {
-    private static float demonicGrasp = 0;
+    private static float demonicGrasp = 10;
     private static float guildSuspicion = 0;
     private const float deathThreshold = 100;
 
@@ -16,14 +17,17 @@ public static class PlayerStats
 
     public static void Upkeep(float deltaDemon, float deltaSus)
     {
-        demonicGrasp += deltaDemon;
-        guildSuspicion += deltaSus;
+        demonicGrasp = Mathf.Clamp(demonicGrasp + deltaDemon, 5f, 150f);
+        guildSuspicion = Mathf.Clamp(guildSuspicion + deltaSus, 0f, 150f);
+    }
 
-        if(demonicGrasp > deathThreshold)
+    public static void CheckEndings()
+    {
+        if (demonicGrasp >= deathThreshold)
         {
             SceneManager.LoadScene("Scenes/Endings/Demonic Ending");
         }
-        if(guildSuspicion > deathThreshold)
+        if (guildSuspicion >= deathThreshold)
         {
             SceneManager.LoadScene("Scenes/Endings/Suspicion Ending");
         }
@@ -32,6 +36,18 @@ public static class PlayerStats
     public static void AnotherDaySurvived()
     {
         daysSurvived++;
+    }
+
+    public static void AnotherQuestCompleted(bool success)
+    {
+        if (success)
+        {
+            questsSucceeded++;
+        }
+        else
+        {
+            questsFailed++;
+        }
     }
 
     public static float DemonPercent()
