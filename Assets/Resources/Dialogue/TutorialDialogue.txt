@@ -1,0 +1,29 @@
+**As the guild master scolds you, two Archers enter from the front entrance and approach you** 
+         **GM** “It seems an adventuring group has entered!” 
+**He turns to the party of two archers** 
+    “Hello there young ones! please present your parties guild pass so we may get you situated! THIS is where your suppose to come in 74, it is your duty to match the parties information to the guilds Record.” 
+**the guild master opens up the large record book on the counter in front of you** 
+    “Here you shall look at the Record, where are able to receive information of various quests around the country. even in times of peace, theres always things that need to be done”
+**The book shows the information regarding QUESTS, objectives need to be done around the country, the large book also shows a map of the surrounding area your guild has jurisdiction in. The book also has an area for the Parties guild pass, so the player may evaluate the matching keywords from the Parties various TRAITS, and compare them to the negative TRAITS and positive TRAITS associated with the quest. these TRAITS vary from adventurer to adventurer, and with effect the overall chance of successful completion.** 
+      “WE strive for excellence here, 74, for it is our bureaucratic duty to apply these Potential heros with the perfect tasks for there specialties and station! your job is to help these heroes succeed and return from the task assigned. An apt Quest giver is able to observe the heroes strengths and weaknesses, and assign parties that will make both the guild posters and the adventurers feel assured the task we handled correctly. This group are a fine pair of lads, but not all to experienced, wounlt you say”
+**The GM refers to the parties overall level**
+      “this is the Parties overall LEVEL. when they make an official party, they must determine the overall strength of thier combined abilities, which they is marked here. whether it is only one brave soul forming a party with themselves, or a group of three, it is the parties entire strength that matters in the end. these young ones tested at a overall party LEVEL of 1. however, even though they are inexperienced, they still have values that are brought to the team.”
+**The GM begins to refer to the party TRAITS** 
+     “This area is for words the guild calls TRAITS, though more precisely are Knowledge keywords that has derived from a myriad of experiences, titles, accolaids, claims, sentences, professions, gossip and other information gathered by the guilds information network, the network is seldom wrong about the information they pass on to the Guild records, so trust in these to help guide your decisions.
+**The GM now refers to the guild list and map**
+     “These are quests as you see them in the guild records, we have detailed information about any posts that arrive, large or small, and no matter the severity. the guild post has the quest LEVEL, the LOCATION, the positive TRAITS and negative TRAITS related to the quests completion success chance, and some details to be given to the adventurer upon acceptance.”
+
+**GM ”** AHH these adventurers are true veterans, decorated local heroes who have completed multiple quests! they have proven themselves recently slaying an archdemon deep in the mountains caves! there experience would prove vital for this nightmare”
+**The Guild master will insist this group is perfect for quest:** 
+- **demon fortress lvl 25**
+positive traits: bodyguard, healer, positive, leader, wise, supportive, determined, demon slayer, exorcist
+negative traits: holy site, wilderness, conspirator, outdoorsman, drunk, edgy, ignorant, passive, prideful, chaotic, “that guy”, man slayer, monster slayer, ruthless, plain, trader, entrepreneur, occultist, caretaker, artist, depressed,
+**The parties modified level is (demon slayer, leader, wise, exorcist, positive, supportive for positive and holysite as the only negative) is 23, making the parties chances with in (2) levels is possible 75%(GA +1 or -1 depending on success)**
+**this is considered acceptable terms for the guild master, and shows the demon lords fortress will need tending to in the future.**
+    “though the demon king is confined to his gilded cage, the Lord of nightmares will always need heroes brave enough to push back his leutenants and thier hordes of demonic minons, that is why the guild was formed to begin with, to make sure adventurers have a system guiding along the path to heroism. but rest assured, sending ANY party to the demon king is always a gamble on their safety, for no mortal is guaranteed against such an evil”
+**the GM feeling uneasy talking about such scary things**
+     “enough about that, now. the heroes have left so we have nothing more to worry about, they will take care of it! and we already have another party coming up.”
+
+Gm “the end of the day approaches quickly so this will be your last party for today, let me see how you can apply the skills youve learned so far, 74.”
+INSERT CHOICE HERE
+GM “see that was so hard now was it,74? could see yourself doing this for a few decades ehh? anway its the end of the day and you seem to be tired, or just slow. head home for today, i will see you here for thing in the morning”
