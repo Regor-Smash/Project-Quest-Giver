@@ -4,10 +4,11 @@ public struct Quest
 {
     public string questName;
     public uint level;
-    public string[] keywords;
     public float demonicInfluence;
-    public uint travelTime;
+    //public uint travelTime;
     public bool urgent;
+    public string[] positiveKeywords;
+    public string[] negativeKeywords;
 
     private static readonly Dictionary<ChanceTiers, float> chanceTiers = new Dictionary<ChanceTiers, float>{
             { ChanceTiers.Impossible, 0.0f }, { ChanceTiers.NotLikely, 0.3f }, { ChanceTiers.Probably, 0.75f}, 
@@ -18,10 +19,11 @@ public struct Quest
     {
         this.questName = so.questName;
         this.level = so.level;
-        this.keywords = so.keywords;
         this.demonicInfluence = so.demonicInfluence;
-        this.travelTime = so.travelTime;
+        //this.travelTime = so.travelTime;
         this.urgent = so.urgent;
+        this.positiveKeywords = so.positiveKeywords;
+        this.negativeKeywords = so.negativeKeywords;
     }
 
     public ChanceTiers GetSuccessTier (Party party)

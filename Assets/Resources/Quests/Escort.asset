@@ -10,13 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15f1cf33d3b496c4793f54d49d9cc989, type: 3}
-  m_Name: Test Quest
+  m_Name: Escort
   m_EditorClassIdentifier: 
-  questName: Test Quest
-  level: 2
-  keywords:
-  - 
-  - 
+  questName: Escort
+  level: 6
   demonicInfluence: 5
-  travelTime: 1
   urgent: 0
+  keywords: []

@@ -10,12 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 15f1cf33d3b496c4793f54d49d9cc989, type: 3}
-  m_Name: SlayTheDemonKing
+  m_Name: ResourceHunting
   m_EditorClassIdentifier: 
-  questName: Slay the Demon King
-  level: 25
-  keywords:
-  - Demon Slayer
-  demonicInfluence: 100
-  travelTime: 5
+  questName: Resource Hunting
+  level: 3
+  demonicInfluence: 0
   urgent: 0
+  keywords: []
