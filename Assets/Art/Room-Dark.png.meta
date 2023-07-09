@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 9d17b18102d69f547bef541ed60b27fa
+guid: bf421809f4fcde84ebaee8f9d97a572b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: IMG_1891_0
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 2747
+        width: 869
+        height: 822
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ef30106b0d2ba45800260d02bfdacf
+      internalID: 770253342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_1891_1
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 2738
+        width: 869
+        height: 824
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ffcaa638b5452e4d9911f75dba1b909
+      internalID: -1820528869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_1891_2
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 2726
+        width: 871
+        height: 824
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6bac18bd6283d428ddb419d4cbfd40
+      internalID: -1667514419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IMG_1891_6
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1761
+        width: 871
+        height: 824
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f038f27df3a162144a43d5c90b342a09
+      internalID: -1435450248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +216,15 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      IMG_1891_0: 770253342
+      IMG_1891_1: -1820528869
+      IMG_1891_2: -1667514419
+      IMG_1891_3: -476784029
+      IMG_1891_4: 743592840
+      IMG_1891_5: 281408988
+      IMG_1891_6: -1435450248
+      IMG_1891_7: -520655719
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
