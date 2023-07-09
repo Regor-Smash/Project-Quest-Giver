@@ -12,6 +12,15 @@ public class PartyManager : MonoBehaviour
 
     public static PartyManager Instance;
 
+    [SerializeField]
+    private Sprite rangerSprite;
+    [SerializeField]
+    private Sprite warriorSprite;
+    [SerializeField]
+    private Sprite priestSprite;
+    [SerializeField]
+    private Sprite wizardSprite;
+
     private void Awake()
     {
         if (Instance == null)
@@ -32,7 +41,27 @@ public class PartyManager : MonoBehaviour
 
     private Party GetRandomParty()
     {
-        return PartyGenerator.GenerateNewParty((uint)Random.Range(1+PlayerStats.daysSurvived, 11 + PlayerStats.daysSurvived));
+        Party p = PartyGenerator.GenerateNewParty((uint)(Random.Range(2, 11) + PlayerStats.daysSurvived));
+
+        SpriteRenderer[] sprites = partyGO.GetComponentsInChildren<SpriteRenderer>();
+        for (int i = 0; i < sprites.Length; i++)
+        {
+            sprites[i].sprite = GetClassSprite(p.GetClassAt(i));
+        }
+
+        return p;
+    }
+
+    private Sprite GetClassSprite(AdventurerClasses adClass)
+    {
+        switch (adClass)
+        {
+            case AdventurerClasses.Priest: return priestSprite;
+            case AdventurerClasses.Warrior: return warriorSprite;
+            case AdventurerClasses.Sorcerer: return wizardSprite;
+            case AdventurerClasses.Ranger: return rangerSprite;
+            default: return null;
+        }
     }
 
     private Party LoadRandomParty()

@@ -73,6 +73,23 @@ public class Party
         return (uint)Mathf.Clamp(Mathf.RoundToInt(avg), 0, 30);
     }
 
+    public AdventurerClasses GetClassAt(int index)
+    {
+        if (index ==0 && adventurer1 != null)
+        {
+            return adventurer1.adventureClass;
+        }
+        if (index == 1 && adventurer2 != null)
+        {
+            return adventurer2.adventureClass;
+        }
+        if (index == 2 && adventurer3 != null)
+        {
+            return adventurer3.adventureClass;
+        }
+        return AdventurerClasses.Priest;
+    }
+
     public override string ToString()
     {
         if (IsEmpty())
