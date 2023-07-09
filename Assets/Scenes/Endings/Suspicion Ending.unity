@@ -345,8 +345,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 89.077}
-  m_SizeDelta: {x: 0, y: 178.15}
+  m_AnchoredPosition: {x: 0, y: 75}
+  m_SizeDelta: {x: -10, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &404068163
 MonoBehaviour:
@@ -368,10 +368,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You were unable to hide your shifty practises from the Guild and now you
-    lost your job. You can't exactly get a new job either becasue the Guild let everyone
-    know that you killed {partyKills*3} people. You'll be lucky to make it out of
-    town alive.
+  m_text: You were unable to hide your shifty actions from the Guild and you are
+    ostracized from society for your crimes. You succumb to the next Winter...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
