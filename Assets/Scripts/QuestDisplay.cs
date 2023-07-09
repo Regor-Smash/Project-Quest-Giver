@@ -6,7 +6,13 @@ public class QuestDisplay : MonoBehaviour
 {
     public TextMeshProUGUI questTitle;
     public TextMeshProUGUI questDescription;
-    public Image demonicInfluenceGauge;
+    public TextMeshProUGUI positiveTraits;
+    public TextMeshProUGUI negativeTraits;
+    public TextMeshProUGUI level;
+    public TextMeshProUGUI location;
+    public TextMeshProUGUI successTier;
+    public TextMeshProUGUI demon;
+    public TextMeshProUGUI reward;
 
     private Quest currQ;
     private Party currP;
@@ -15,9 +21,15 @@ public class QuestDisplay : MonoBehaviour
     {
         currQ = q;
         currP = p;
+
         questTitle.text = q.questName;
-        questDescription.text = "This is a quest for Level " + q.level.ToString() + " adventurers. It would be " + q.GetSuccessTier(p).ToString() + " that your party completes it.";
-        demonicInfluenceGauge.fillAmount = q.demonicInfluence / 100;
+        questDescription.text = "Go do the thing!";
+        
+        level.text = q.level.ToString();
+        location.text = "Swamp";
+        successTier.text = q.GetSuccessTier(p).ToString();
+        demon.text = q.demonicInfluence.ToString("0.#%");
+        reward.text = (20 * q.level).ToString() + " Gold";
     }
 
     public void ChooseQuest()
