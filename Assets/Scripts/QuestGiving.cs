@@ -24,7 +24,8 @@ public class QuestGiving : MonoBehaviour
 
     void Start()
     {
-        currParty = LoadRandomParty();
+        currParty = GetRandomParty();
+        Debug.Log(currParty.ToString());
         QuestSO[] allQSO = Resources.LoadAll<QuestSO>("Quests");
         allQuests = new Quest[allQSO.Length];
         for(int i = 0; i < allQSO.Length; i++)
@@ -32,6 +33,11 @@ public class QuestGiving : MonoBehaviour
             allQuests[i] = new Quest(allQSO[i]);
         }
         DisplayQuestContracts();
+    }
+
+    private Party GetRandomParty()
+    {
+        return PartyGenerator.GenerateNewParty((uint)Random.Range(1, 11));
     }
 
     private Party LoadRandomParty()

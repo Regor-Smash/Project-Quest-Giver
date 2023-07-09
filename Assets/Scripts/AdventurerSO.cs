@@ -4,7 +4,7 @@ using UnityEngine;
 public class AdventurerSO : ScriptableObject
 {
     public string adventurerName;
-    public string adventureClass;
+    public AdventurerClasses adventureClass;
     public uint level;
     public string[] keywords;
 
@@ -15,6 +15,6 @@ public class AdventurerSO : ScriptableObject
             Debug.LogError("Adventurer needs a name!", this);
         }
         //adventureClass
-        Mathf.Clamp(level, 1, 20);
+        level = (uint)Mathf.Clamp(level, 1, 20);
     }
 }

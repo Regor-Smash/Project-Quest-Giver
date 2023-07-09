@@ -15,8 +15,30 @@ public class Party
         this.adventurer3 = a3;
     }
 
+    public bool IsEmpty()
+    {
+        if(adventurer1 != null)
+        {
+            return false;
+        }
+        if (adventurer2 != null)
+        {
+            return false;
+        }
+        if (adventurer3 != null)
+        {
+            return false;
+        }
+        return true;
+    }
+
     public uint PartyLevel()
     {
+        if (IsEmpty())
+        {
+            Debug.LogError("Party is empty");
+            return 0;
+        }
         float totLevel = 0;
         int totNum = 0;
         if (adventurer1 != null)
@@ -35,15 +57,28 @@ public class Party
             totNum++;
         }
 
-        if (totNum > 0)
+        float avg = totLevel / totNum;
+        return (uint)Mathf.Abs(Mathf.RoundToInt(avg));
+    }
+
+    public override string ToString()
+    {
+        if (IsEmpty())
         {
-            float avg = totLevel / totNum;
-            return (uint)Mathf.Abs(Mathf.RoundToInt(avg));
+            return "Empty Party";
         }
         else
         {
-            Debug.LogError("Party is empty");
-            return 0;
+            string result = $"{adventurer1.adventurerName} ({adventurer1.adventureClass} {adventurer1.level})";
+            if (adventurer2 != null)
+            {
+                result += $", {adventurer2.adventurerName} ({adventurer2.adventureClass} {adventurer2.level})";
+            }
+            if (adventurer3 != null)
+            {
+                result += $", {adventurer3.adventurerName} ({adventurer3.adventureClass} {adventurer3.level})";
+            }
+            return result;
         }
     }
 }
